@@ -2,7 +2,7 @@ buildscript {
     repositories {
         jcenter()
         maven {
-            url "https://nexus.mtvi.com/nexus/repository/releases"
+            url "$nexusRepoUrl"
             credentials {
                 username "$nexusUser"
                 password "$nexusPassword"
