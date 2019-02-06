@@ -1,0 +1,6 @@
+@Library('vmn-jenkins-libs@feature/MCS-3557-jarvis-gradle-platform') _
+
+vmnPipeline('java-gradle') {
+  jdkVersionMajor '8'
+  jdkVersionMinor '144'
+}
