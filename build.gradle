@@ -1,23 +1,13 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url "$nexusRepoUrl"
-            credentials {
-                username "$nexusUser"
-                password "$nexusPassword"
-            }
-        }
-    }
-    dependencies {
-        classpath "vmn.jenkins.libs.platforms.java:vmn-gradle-plugin:0.1.2"
     }
 }
 plugins {
     id 'java'
 }
 
-group 'vmn.jenkins.canary'
+group 'example.jenkins.canary'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -29,5 +19,3 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
-
-apply plugin: 'vmn.jenkins.libs.platforms.java.vmn-gradle-plugin'
