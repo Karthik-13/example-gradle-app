@@ -1,4 +1,4 @@
-properties([traits([gitHubBranchDiscovery, strategyId: 3])])
+properties([[traits([gitHubBranchDiscovery, strategyId: 3])]])
 node {
 echo "Hi"
 }
