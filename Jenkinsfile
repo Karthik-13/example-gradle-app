@@ -7,15 +7,13 @@ podTemplate(label: label, containers: [
 {
 node(label){
   stage('SCM') {
-      container('gradle-slave'){
+     
        def checkoutVars=checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '8118f0af-166e-456c-8579-d80cc1078bfc', url: 'https://github.com/Karthik-13/example-gradle-app.git']]])
        print(checkoutVars)
-     } 
    }
   stage('Build'){
-    container("gradle-slave") {
-            sh(script:"./gradlew -q build | xargs echo -n",returnStdout: true)
-        }
+    
+      sh(script:"./gradlew -q build | xargs echo -n",returnStdout: true)
   }
 }
 }
